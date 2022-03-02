@@ -31,3 +31,7 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: ArtifactoryGenericUpload@2
+  inputs:
+    specSource: 'taskConfiguration'
+    failNoOp: true
