@@ -33,5 +33,15 @@ steps:
     publishLocation: 'Container'
 - task: ArtifactoryGenericUpload@2
   inputs:
+    artifactoryService: 'J'
     specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "*.apk",
+            "target": "example-repo-local"
+          }
+        ]
+      }
     failNoOp: true
